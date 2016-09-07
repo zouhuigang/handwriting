@@ -48,31 +48,31 @@ def get_sore(url,k):
         for flist in flists:
             i+=1
             if i==1:
-               GYC.score=float(flist)
+               GYC.score=float(flist[14:-1])
                add_items(GYC)
             elif i==2:
-                LJS1.score=float(flist)
+                LJS1.score=float(flist[14:-1])
                 add_items(LJS1)
             elif i==3:
-                LJS2.score=float(flist)
+                LJS2.score=float(flist[14:-1])
                 add_items(LJS2)
             elif i==4:
-                WTK.score=float(flist)
+                WTK.score=float(flist[14:-1])
                 add_items(WTK)
             elif i==5:
-                YZQ.score=float(flist)
+                YZQ.score=float(flist[14:-1])
                 add_items(YZQ)
             elif i==6:
-                NYK.score=float(flist)
+                NYK.score=float(flist[14:-1])
                 add_items(NYK)
-            if prop<float(flist):
-                prop=float(flist)
+            if prop<float(flist[14:-1]):
+                prop=float(flist[14:-1])
         add_max_iter(prop,k)
     return
 
+name=['白','日','依','山','尽','黄','河','入','海','流']
 for i in range(10):
-    file_name=str(i)+'.txt'
-    url='E:\\笔迹识别\\'+ file_name
+    url='E:\\笔迹识别\\'+ name[i]+'.txt'
     print('=======================================================================================')
     get_sore(url,i)
     for list in lists:
